@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, Image, ScrollView, Platform, StatusBar } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SvgXml } from 'react-native-svg';
+import { useRouter } from "expo-router"; 
 
 // Import the new icons from react-native-vector-icons
 import Fontisto from 'react-native-vector-icons/Fontisto';
@@ -27,6 +28,9 @@ const analyticsIconSvg = `
 `;
 
 const KhelPratibhaScreen = () => {
+
+      const router = useRouter();
+
     return (
         <View style={styles.container}>
             <StatusBar barStyle="dark-content" backgroundColor="#eceedf" />
@@ -86,17 +90,11 @@ const KhelPratibhaScreen = () => {
 
                     {/* Auth Buttons Section */}
                     <View style={styles.authButtonsSection}>
-                        <TouchableOpacity style={styles.primaryButton}>
+                        <TouchableOpacity style={styles.primaryButton} onPress={() => router.replace("/(auth)/")}>
                             <Text style={styles.primaryButtonText}>Get Started</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.socialButton}>
-                            <Fontisto name="google" size={20} color="#333" style={styles.socialIcon} />
-                            <Text style={styles.socialButtonText}>Continue with Google</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.socialButton}>
-                            <FontAwesome name="apple" size={20} color="#333" style={styles.socialIcon} />
-                            <Text style={styles.socialButtonText}>Continue with Apple</Text>
-                        </TouchableOpacity>
+                        
+                        
                     </View>
 
                     {/* Disclaimer */}
