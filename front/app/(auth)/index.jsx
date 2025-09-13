@@ -84,7 +84,7 @@ const SignUpScreen = () => {
                     </View>
 
                     {/* Sign Up Button */}
-                    <TouchableOpacity onPress={handleSignUp} style={styles.primaryButton}>
+                    <TouchableOpacity onPress={() => router.replace("/onboarding")} style={styles.primaryButton}>
                         <Text style={styles.primaryButtonText}>Sign Up</Text>
                     </TouchableOpacity>
 
@@ -111,7 +111,7 @@ const SignUpScreen = () => {
                     <View style={styles.loginLinkContainer}>
                         <Text style={styles.loginText}>Already have an account? </Text>
                         <TouchableOpacity onPress={() => router.push('/(auth)/login')}>
-                            <Text style={styles.loginLink}>Log in</Text>
+                            <Text style={styles.loginLink} >Log in</Text>
                         </TouchableOpacity>
                     </View>
 
